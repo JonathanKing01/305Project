@@ -10,19 +10,19 @@ ENTITY clock_div IS
 END clock_div;
 
 architecture behavior of clock_div is
-SigNAL count : STD_logic_veCTor(1 downto 0):="00";
-SigNAL q : STD_logic:='0';
+SigNAL count : STD_logic;
+SigNAL q : STD_logic;
 begin
 
 process(clk)
 begin
-	count <= count +  '1';
-	if(count = "10")then
-		count <= "00";
-		if(q = '0')then
+	if(clk'event and clk = '1') then
+		if(count = '1')then
 			q <= '1';
-		else 
+			count <= '0';
+		else
 			q <= '0';
+			count <= '1';
 		end if;
 	end if;
 end process;
