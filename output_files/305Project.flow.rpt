@@ -1,5 +1,5 @@
 Flow report for 305Project
-Wed May 02 12:37:51 2018
+Thu May 03 11:29:46 2018
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed May 02 12:37:51 2018       ;
+; Flow Status                        ; Successful - Thu May 03 11:29:46 2018       ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Full Version ;
 ; Revision Name                      ; 305Project                                  ;
 ; Top-level Entity Name              ; Diagram                                     ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/02/2018 12:37:34 ;
+; Start date & time ; 05/03/2018 11:29:29 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; 305Project          ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 109952947368705.152522145411140 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 109952947362662.152530376903724 ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                            ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)          ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                              ; --            ; --          ; --             ;
@@ -94,10 +94,10 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 581 MB              ; 00:00:02                           ;
-; Fitter                    ; 00:00:07     ; 2.0                     ; 1291 MB             ; 00:00:08                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 597 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:07     ; 1.5                     ; 1307 MB             ; 00:00:08                           ;
 ; Assembler                 ; 00:00:01     ; 1.0                     ; 475 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 556 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 559 MB              ; 00:00:02                           ;
 ; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 437 MB              ; 00:00:01                           ;
 ; Total                     ; 00:00:13     ; --                      ; --                  ; 00:00:14                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
@@ -108,11 +108,11 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; EN-352798        ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; EN-352798        ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; EN-352798        ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; EN-352798        ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; EN-352798        ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; EN-352803        ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; EN-352803        ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; EN-352803        ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; EN-352803        ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; EN-352803        ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
