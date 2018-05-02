@@ -28,22 +28,19 @@ ENTITY ball IS
 Generic(ADDR_WIDTH: integer := 12; DATA_WIDTH: integer := 1);
 
    PORT(SIGNAL PB1, PB2, Clock 			: IN std_logic;
-		  SIGNAL Switch_one					: IN std_logic;
         SIGNAL Red,Green,Blue 			: OUT std_logic;
-        SIGNAL Horiz_sync,Vert_sync		: OUT std_logic;	
-		  SIGNAL Seg1, Seg0					: OUT std_logic_vector(6 DOWNTO 0)
-	);
+        SIGNAL Horiz_sync,Vert_sync		: OUT std_logic);		
 END ball;
 
 architecture behavior of ball is
 
 			-- Video Display Signals   
 SIGNAL Red_Data, Green_Data, Blue_Data, vert_sync_int,
-		reset, Ball_on, Direction					: std_logic;
-SIGNAL Size 											: std_logic_vector(9 DOWNTO 0);  
-SIGNAL Ball_Y_motion, Ball_X_motion 			: std_logic_vector(9 DOWNTO 0);
-SIGNAL Ball_Y_pos, Ball_X_pos						: std_logic_vector(9 DOWNTO 0);
-SIGNAL pixel_row, pixel_column					: std_logic_vector(9 DOWNTO 0); 
+		reset, Ball_on, Direction			: std_logic;
+SIGNAL Size 								: std_logic_vector(9 DOWNTO 0);  
+SIGNAL Ball_Y_motion 						: std_logic_vector(9 DOWNTO 0);
+SIGNAL Ball_Y_pos, Ball_X_pos				: std_logic_vector(9 DOWNTO 0);
+SIGNAL pixel_row, pixel_column				: std_logic_vector(9 DOWNTO 0); 
 
 BEGIN           
    SYNC: vga_sync
@@ -54,7 +51,7 @@ BEGIN
 			 	pixel_row => pixel_row, pixel_column => pixel_column);
 
 Size <= CONV_STD_LOGIC_VECTOR(8,10);
--- Ball_X_pos <= CONV_STD_LOGIC_VECTOR(320,10);
+Ball_X_pos <= CONV_STD_LOGIC_VECTOR(320,10);
 
 		-- need internal copy of vert_sync to read
 vert_sync <= vert_sync_int;
@@ -80,14 +77,7 @@ END IF;
 END process RGB_Display;
 
 Move_Ball: process
-	VARIABLE Speed : integer;
 BEGIN
-	-- If Switch_one is turned on the speed of the ball is increased by 2
-	IF (Switch_one = '1') THEN
-		Speed := 4;
-	ELSE
-		Speed := 2;
-	END IF;
 			-- Move ball once every vertical sync
 	WAIT UNTIL vert_sync_int'event and vert_sync_int = '1';
 			-- Bounce off top or bottom of screen
@@ -96,42 +86,9 @@ BEGIN
 			ELSIF Ball_Y_pos <= Size THEN
 				Ball_Y_motion <= CONV_STD_LOGIC_VECTOR(2,10);
 			END IF;
-			
 			-- Compute next ball Y position
-			Ball_Y_pos <= Ball_Y_pos + Ball_Y_motion;
-			
-			-- If PB1 or 2 is pushed, set movement vector, otherwise set to 0
-			IF (PB1 = '0' OR PB2 = '0') THEN
-				Ball_X_motion <= - CONV_STD_LOGIC_VECTOR(Speed,10);
-			ELSE
-				Ball_X_motion <= CONV_STD_LOGIC_VECTOR(0,10);
-			END IF;
-			
-			-- Compute next ball X position depending on movement
-			IF (PB1 = '0') THEN
-				Ball_X_pos <= Ball_X_pos + Ball_X_motion;
-			ELSIF (PB2 = '0') THEN
-				Ball_X_pos <= Ball_X_pos - Ball_X_motion;
-			END IF;
+				Ball_Y_pos <= Ball_Y_pos + Ball_Y_motion;
 END process Move_Ball;
-
--- Display's which button is pressed on the seven_seg
-Seven_Seg: process(PB1, PB2)
-BEGIN
-	-- Display right arrow
-	IF (PB2 = '0') THEN
-		Seg0 <= "1110000";
-	ELSE
-		Seg0 <= "1111111";
-	END IF;
-	
-	-- Display left arrow
-	IF (PB1 = '0') THEN
-		Seg1 <= "1000110";
-	ELSE
-		Seg1 <= "1111111";
-	END IF;
-END process;
 
 END behavior;
 
