@@ -1,85 +1,13 @@
-|Diagram
-red_out <= ball:inst.Red
-bt1 => ball:inst.PB1
-bt2 => ball:inst.PB2
+|TextExample
+red_out <= VGA_SYNC:inst2.red_out
 clk => clock_div:inst1.clk
-switch_one => ball:inst.Switch_one
-green_out <= ball:inst.Green
-blue_out <= ball:inst.Blue
-vert_sync_out <= ball:inst.Vert_sync
-horiz_sync_out <= ball:inst.Horiz_sync
-seg0[0] <= ball:inst.Seg0[0]
-seg0[1] <= ball:inst.Seg0[1]
-seg0[2] <= ball:inst.Seg0[2]
-seg0[3] <= ball:inst.Seg0[3]
-seg0[4] <= ball:inst.Seg0[4]
-seg0[5] <= ball:inst.Seg0[5]
-seg0[6] <= ball:inst.Seg0[6]
-seg1[0] <= ball:inst.Seg1[0]
-seg1[1] <= ball:inst.Seg1[1]
-seg1[2] <= ball:inst.Seg1[2]
-seg1[3] <= ball:inst.Seg1[3]
-seg1[4] <= ball:inst.Seg1[4]
-seg1[5] <= ball:inst.Seg1[5]
-seg1[6] <= ball:inst.Seg1[6]
+green_out <= VGA_SYNC:inst2.green_out
+blue_out <= VGA_SYNC:inst2.blue_out
+vert_sync_out <= VGA_SYNC:inst2.vert_sync_out
+horiz_sync_out <= VGA_SYNC:inst2.horiz_sync_out
 
 
-|Diagram|ball:inst
-PB1 => Seg1[5].DATAIN
-PB1 => Seg1[4].DATAIN
-PB1 => Seg1[3].DATAIN
-PB1 => Seg1[0].DATAIN
-PB1 => Ball_X_pos.OUTPUTSELECT
-PB1 => Ball_X_pos.OUTPUTSELECT
-PB1 => Ball_X_pos.OUTPUTSELECT
-PB1 => Ball_X_pos.OUTPUTSELECT
-PB1 => Ball_X_pos.OUTPUTSELECT
-PB1 => Ball_X_pos.OUTPUTSELECT
-PB1 => Ball_X_pos.OUTPUTSELECT
-PB1 => Ball_X_pos.OUTPUTSELECT
-PB1 => Ball_X_pos.OUTPUTSELECT
-PB1 => Ball_X_pos.OUTPUTSELECT
-PB1 => Move_Ball.IN0
-PB2 => Seg0[3].DATAIN
-PB2 => Seg0[2].DATAIN
-PB2 => Seg0[1].DATAIN
-PB2 => Seg0[0].DATAIN
-PB2 => Ball_X_pos.OUTPUTSELECT
-PB2 => Ball_X_pos.OUTPUTSELECT
-PB2 => Ball_X_pos.OUTPUTSELECT
-PB2 => Ball_X_pos.OUTPUTSELECT
-PB2 => Ball_X_pos.OUTPUTSELECT
-PB2 => Ball_X_pos.OUTPUTSELECT
-PB2 => Ball_X_pos.OUTPUTSELECT
-PB2 => Ball_X_pos.OUTPUTSELECT
-PB2 => Ball_X_pos.OUTPUTSELECT
-PB2 => Ball_X_pos.OUTPUTSELECT
-PB2 => Move_Ball.IN1
-Clock => vga_sync:SYNC.clock_25Mhz
-Switch_one => Add6.IN4
-Switch_one => Add6.IN3
-Red <= vga_sync:SYNC.red_out
-Green <= vga_sync:SYNC.green_out
-Blue <= vga_sync:SYNC.blue_out
-Horiz_sync <= vga_sync:SYNC.horiz_sync_out
-Vert_sync <= vga_sync:SYNC.vert_sync_out
-Seg1[0] <= PB1.DB_MAX_OUTPUT_PORT_TYPE
-Seg1[1] <= <VCC>
-Seg1[2] <= <VCC>
-Seg1[3] <= PB1.DB_MAX_OUTPUT_PORT_TYPE
-Seg1[4] <= PB1.DB_MAX_OUTPUT_PORT_TYPE
-Seg1[5] <= PB1.DB_MAX_OUTPUT_PORT_TYPE
-Seg1[6] <= <VCC>
-Seg0[0] <= PB2.DB_MAX_OUTPUT_PORT_TYPE
-Seg0[1] <= PB2.DB_MAX_OUTPUT_PORT_TYPE
-Seg0[2] <= PB2.DB_MAX_OUTPUT_PORT_TYPE
-Seg0[3] <= PB2.DB_MAX_OUTPUT_PORT_TYPE
-Seg0[4] <= <VCC>
-Seg0[5] <= <VCC>
-Seg0[6] <= <VCC>
-
-
-|Diagram|ball:inst|VGA_SYNC:SYNC
+|TextExample|VGA_SYNC:inst2
 clock_25Mhz => vert_sync_out~reg0.CLK
 clock_25Mhz => horiz_sync_out~reg0.CLK
 clock_25Mhz => blue_out~reg0.CLK
@@ -159,9 +87,163 @@ pixel_column[8] <= pixel_column[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 pixel_column[9] <= pixel_column[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Diagram|clock_div:inst1
+|TextExample|clock_div:inst1
 clk => count.CLK
 clk => q.CLK
 q_Out <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TextExample|char_rom:inst
+char_choice[0] => altsyncram:altsyncram_component.address_a[3]
+char_choice[1] => altsyncram:altsyncram_component.address_a[6]
+font_row[0] => altsyncram:altsyncram_component.address_a[0]
+font_row[1] => altsyncram:altsyncram_component.address_a[1]
+font_row[2] => altsyncram:altsyncram_component.address_a[2]
+font_col[0] => Mux0.IN2
+font_col[1] => Mux0.IN1
+font_col[2] => Mux0.IN0
+clock => altsyncram:altsyncram_component.clock0
+rom_mux_output <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TextExample|char_rom:inst|altsyncram:altsyncram_component
+wren_a => ~NO_FANOUT~
+rden_a => ~NO_FANOUT~
+wren_b => ~NO_FANOUT~
+rden_b => ~NO_FANOUT~
+data_a[0] => ~NO_FANOUT~
+data_a[1] => ~NO_FANOUT~
+data_a[2] => ~NO_FANOUT~
+data_a[3] => ~NO_FANOUT~
+data_a[4] => ~NO_FANOUT~
+data_a[5] => ~NO_FANOUT~
+data_a[6] => ~NO_FANOUT~
+data_a[7] => ~NO_FANOUT~
+data_b[0] => ~NO_FANOUT~
+address_a[0] => altsyncram_kt91:auto_generated.address_a[0]
+address_a[1] => altsyncram_kt91:auto_generated.address_a[1]
+address_a[2] => altsyncram_kt91:auto_generated.address_a[2]
+address_a[3] => altsyncram_kt91:auto_generated.address_a[3]
+address_a[4] => altsyncram_kt91:auto_generated.address_a[4]
+address_a[5] => altsyncram_kt91:auto_generated.address_a[5]
+address_a[6] => altsyncram_kt91:auto_generated.address_a[6]
+address_a[7] => altsyncram_kt91:auto_generated.address_a[7]
+address_a[8] => altsyncram_kt91:auto_generated.address_a[8]
+address_b[0] => ~NO_FANOUT~
+addressstall_a => ~NO_FANOUT~
+addressstall_b => ~NO_FANOUT~
+clock0 => altsyncram_kt91:auto_generated.clock0
+clock1 => ~NO_FANOUT~
+clocken0 => ~NO_FANOUT~
+clocken1 => ~NO_FANOUT~
+clocken2 => ~NO_FANOUT~
+clocken3 => ~NO_FANOUT~
+aclr0 => ~NO_FANOUT~
+aclr1 => ~NO_FANOUT~
+byteena_a[0] => ~NO_FANOUT~
+byteena_b[0] => ~NO_FANOUT~
+q_a[0] <= altsyncram_kt91:auto_generated.q_a[0]
+q_a[1] <= altsyncram_kt91:auto_generated.q_a[1]
+q_a[2] <= altsyncram_kt91:auto_generated.q_a[2]
+q_a[3] <= altsyncram_kt91:auto_generated.q_a[3]
+q_a[4] <= altsyncram_kt91:auto_generated.q_a[4]
+q_a[5] <= altsyncram_kt91:auto_generated.q_a[5]
+q_a[6] <= altsyncram_kt91:auto_generated.q_a[6]
+q_a[7] <= altsyncram_kt91:auto_generated.q_a[7]
+q_b[0] <= <GND>
+eccstatus[0] <= <GND>
+eccstatus[1] <= <GND>
+eccstatus[2] <= <GND>
+
+
+|TextExample|char_rom:inst|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated
+address_a[0] => ram_block1a0.PORTAADDR
+address_a[0] => ram_block1a1.PORTAADDR
+address_a[0] => ram_block1a2.PORTAADDR
+address_a[0] => ram_block1a3.PORTAADDR
+address_a[0] => ram_block1a4.PORTAADDR
+address_a[0] => ram_block1a5.PORTAADDR
+address_a[0] => ram_block1a6.PORTAADDR
+address_a[0] => ram_block1a7.PORTAADDR
+address_a[1] => ram_block1a0.PORTAADDR1
+address_a[1] => ram_block1a1.PORTAADDR1
+address_a[1] => ram_block1a2.PORTAADDR1
+address_a[1] => ram_block1a3.PORTAADDR1
+address_a[1] => ram_block1a4.PORTAADDR1
+address_a[1] => ram_block1a5.PORTAADDR1
+address_a[1] => ram_block1a6.PORTAADDR1
+address_a[1] => ram_block1a7.PORTAADDR1
+address_a[2] => ram_block1a0.PORTAADDR2
+address_a[2] => ram_block1a1.PORTAADDR2
+address_a[2] => ram_block1a2.PORTAADDR2
+address_a[2] => ram_block1a3.PORTAADDR2
+address_a[2] => ram_block1a4.PORTAADDR2
+address_a[2] => ram_block1a5.PORTAADDR2
+address_a[2] => ram_block1a6.PORTAADDR2
+address_a[2] => ram_block1a7.PORTAADDR2
+address_a[3] => ram_block1a0.PORTAADDR3
+address_a[3] => ram_block1a1.PORTAADDR3
+address_a[3] => ram_block1a2.PORTAADDR3
+address_a[3] => ram_block1a3.PORTAADDR3
+address_a[3] => ram_block1a4.PORTAADDR3
+address_a[3] => ram_block1a5.PORTAADDR3
+address_a[3] => ram_block1a6.PORTAADDR3
+address_a[3] => ram_block1a7.PORTAADDR3
+address_a[4] => ram_block1a0.PORTAADDR4
+address_a[4] => ram_block1a1.PORTAADDR4
+address_a[4] => ram_block1a2.PORTAADDR4
+address_a[4] => ram_block1a3.PORTAADDR4
+address_a[4] => ram_block1a4.PORTAADDR4
+address_a[4] => ram_block1a5.PORTAADDR4
+address_a[4] => ram_block1a6.PORTAADDR4
+address_a[4] => ram_block1a7.PORTAADDR4
+address_a[5] => ram_block1a0.PORTAADDR5
+address_a[5] => ram_block1a1.PORTAADDR5
+address_a[5] => ram_block1a2.PORTAADDR5
+address_a[5] => ram_block1a3.PORTAADDR5
+address_a[5] => ram_block1a4.PORTAADDR5
+address_a[5] => ram_block1a5.PORTAADDR5
+address_a[5] => ram_block1a6.PORTAADDR5
+address_a[5] => ram_block1a7.PORTAADDR5
+address_a[6] => ram_block1a0.PORTAADDR6
+address_a[6] => ram_block1a1.PORTAADDR6
+address_a[6] => ram_block1a2.PORTAADDR6
+address_a[6] => ram_block1a3.PORTAADDR6
+address_a[6] => ram_block1a4.PORTAADDR6
+address_a[6] => ram_block1a5.PORTAADDR6
+address_a[6] => ram_block1a6.PORTAADDR6
+address_a[6] => ram_block1a7.PORTAADDR6
+address_a[7] => ram_block1a0.PORTAADDR7
+address_a[7] => ram_block1a1.PORTAADDR7
+address_a[7] => ram_block1a2.PORTAADDR7
+address_a[7] => ram_block1a3.PORTAADDR7
+address_a[7] => ram_block1a4.PORTAADDR7
+address_a[7] => ram_block1a5.PORTAADDR7
+address_a[7] => ram_block1a6.PORTAADDR7
+address_a[7] => ram_block1a7.PORTAADDR7
+address_a[8] => ram_block1a0.PORTAADDR8
+address_a[8] => ram_block1a1.PORTAADDR8
+address_a[8] => ram_block1a2.PORTAADDR8
+address_a[8] => ram_block1a3.PORTAADDR8
+address_a[8] => ram_block1a4.PORTAADDR8
+address_a[8] => ram_block1a5.PORTAADDR8
+address_a[8] => ram_block1a6.PORTAADDR8
+address_a[8] => ram_block1a7.PORTAADDR8
+clock0 => ram_block1a0.CLK0
+clock0 => ram_block1a1.CLK0
+clock0 => ram_block1a2.CLK0
+clock0 => ram_block1a3.CLK0
+clock0 => ram_block1a4.CLK0
+clock0 => ram_block1a5.CLK0
+clock0 => ram_block1a6.CLK0
+clock0 => ram_block1a7.CLK0
+q_a[0] <= ram_block1a0.PORTADATAOUT
+q_a[1] <= ram_block1a1.PORTADATAOUT
+q_a[2] <= ram_block1a2.PORTADATAOUT
+q_a[3] <= ram_block1a3.PORTADATAOUT
+q_a[4] <= ram_block1a4.PORTADATAOUT
+q_a[5] <= ram_block1a5.PORTADATAOUT
+q_a[6] <= ram_block1a6.PORTADATAOUT
+q_a[7] <= ram_block1a7.PORTADATAOUT
 
 

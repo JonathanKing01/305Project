@@ -14,8 +14,7 @@ ENTITY char_rom IS
 	PORT
 	(
 		--address			: 	IN STD_LOGIC_VECTOR (8 DOWNTO 0)
-		--character_address	:	IN STD_LOGIC_VECTOR (5 DOWNTO 0);
-		char_choice				: IN STD_LOGIC_VECTOR (1 DOWNTO 0);
+		character_address	:	IN STD_LOGIC_VECTOR (5 DOWNTO 0);
 		font_row, font_col	:	IN STD_LOGIC_VECTOR (2 DOWNTO 0);
 		clock				: 	IN STD_LOGIC ;
 		--q					: 	OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
@@ -26,7 +25,6 @@ END char_rom;
 
 ARCHITECTURE SYN OF char_rom IS
 
-	SIGNAL character_address : STD_LOGIC_VECTOR(5 DOWNTO 0);
 	SIGNAL rom_data		: STD_LOGIC_VECTOR (7 DOWNTO 0);
 	SIGNAL rom_address	: STD_LOGIC_VECTOR (8 DOWNTO 0);
 
@@ -80,16 +78,6 @@ BEGIN
 		q_a => rom_data
 	);
 
-	character_logic: process(char_choice)
-	BEGIN
-		CASE char_choice IS
-			WHEN "00" => character_address <= "000010"; -- 2
-			WHEN "01" => character_address <= "000011"; -- 3
-			WHEN "10" => character_address <= "001010"; -- 10
-			WHEN "11" => character_address <= "001011"; -- 11
-		END CASE;
-	END process;
-	
 	rom_address <= character_address & font_row;
 	rom_mux_output <= rom_data (CONV_INTEGER(NOT font_col(2 DOWNTO 0)));
 
