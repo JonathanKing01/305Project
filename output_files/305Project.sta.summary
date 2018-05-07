@@ -2,76 +2,136 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'clock_div:inst1|q'
-Slack : -4.219
-TNS   : -60.326
+Type  : Slow 1200mV 85C Model Setup 'clock_div:inst2|q'
+Slack : -3.185
+TNS   : -85.706
+
+Type  : Slow 1200mV 85C Model Setup 'MOUSE:inst1|MOUSE_CLK_FILTER'
+Slack : -2.270
+TNS   : -148.510
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : 0.244
+Slack : 0.243
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'clock_div:inst1|q'
-Slack : 0.319
+Type  : Slow 1200mV 85C Model Hold 'clock_div:inst2|q'
+Slack : 0.173
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'MOUSE:inst1|MOUSE_CLK_FILTER'
+Slack : 0.302
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.362
+Slack : 0.361
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'MOUSE:inst1|MOUSE_CLK_FILTER'
+Slack : -1.121
+TNS   : -16.811
+
+Type  : Slow 1200mV 85C Model Removal 'MOUSE:inst1|MOUSE_CLK_FILTER'
+Slack : 1.537
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
 TNS   : -5.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock_div:inst1|q'
-Slack : -2.174
-TNS   : -38.174
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'MOUSE:inst1|MOUSE_CLK_FILTER'
+Slack : -1.000
+TNS   : -92.000
 
-Type  : Slow 1200mV 0C Model Setup 'clock_div:inst1|q'
-Slack : -3.685
-TNS   : -50.941
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock_div:inst2|q'
+Slack : -1.000
+TNS   : -75.000
+
+Type  : Slow 1200mV 0C Model Setup 'clock_div:inst2|q'
+Slack : -2.733
+TNS   : -70.711
+
+Type  : Slow 1200mV 0C Model Setup 'MOUSE:inst1|MOUSE_CLK_FILTER'
+Slack : -1.945
+TNS   : -126.230
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
 Slack : 0.328
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'clock_div:inst1|q'
-Slack : 0.307
+Type  : Slow 1200mV 0C Model Hold 'clock_div:inst2|q'
+Slack : 0.221
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'MOUSE:inst1|MOUSE_CLK_FILTER'
+Slack : 0.279
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
 Slack : 0.320
 TNS   : 0.000
 
+Type  : Slow 1200mV 0C Model Recovery 'MOUSE:inst1|MOUSE_CLK_FILTER'
+Slack : -0.968
+TNS   : -14.633
+
+Type  : Slow 1200mV 0C Model Removal 'MOUSE:inst1|MOUSE_CLK_FILTER'
+Slack : 1.456
+TNS   : 0.000
+
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
 TNS   : -5.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock_div:inst1|q'
-Slack : -2.174
-TNS   : -38.174
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'MOUSE:inst1|MOUSE_CLK_FILTER'
+Slack : -1.000
+TNS   : -92.000
 
-Type  : Fast 1200mV 0C Model Setup 'clock_div:inst1|q'
-Slack : -1.730
-TNS   : -19.384
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock_div:inst2|q'
+Slack : -1.000
+TNS   : -75.000
+
+Type  : Fast 1200mV 0C Model Setup 'clock_div:inst2|q'
+Slack : -1.305
+TNS   : -24.132
+
+Type  : Fast 1200mV 0C Model Setup 'MOUSE:inst1|MOUSE_CLK_FILTER'
+Slack : -0.790
+TNS   : -45.149
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : 0.576
+Slack : 0.577
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'clock_div:inst1|q'
-Slack : 0.155
+Type  : Fast 1200mV 0C Model Hold 'clock_div:inst2|q'
+Slack : -0.048
+TNS   : -0.048
+
+Type  : Fast 1200mV 0C Model Hold 'MOUSE:inst1|MOUSE_CLK_FILTER'
+Slack : 0.146
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.194
+Slack : 0.195
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'MOUSE:inst1|MOUSE_CLK_FILTER'
+Slack : -0.400
+TNS   : -5.770
+
+Type  : Fast 1200mV 0C Model Removal 'MOUSE:inst1|MOUSE_CLK_FILTER'
+Slack : 1.034
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -5.110
+TNS   : -5.112
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock_div:inst1|q'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'MOUSE:inst1|MOUSE_CLK_FILTER'
 Slack : -1.000
-TNS   : -37.000
+TNS   : -92.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock_div:inst2|q'
+Slack : -1.000
+TNS   : -75.000
 
 ------------------------------------------------------------
