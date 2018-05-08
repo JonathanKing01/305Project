@@ -1,5 +1,5 @@
 Flow report for 305Project
-Tue May 08 11:30:43 2018
+Tue May 08 15:43:49 2018
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
 
 
@@ -40,20 +40,20 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue May 08 11:30:43 2018       ;
+; Flow Status                        ; Successful - Tue May 08 15:43:49 2018       ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Full Version ;
 ; Revision Name                      ; 305Project                                  ;
-; Top-level Entity Name              ; Mouse_ball_diagram                          ;
+; Top-level Entity Name              ; Diagram                                     ;
 ; Family                             ; Cyclone III                                 ;
 ; Device                             ; EP3C16F484C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 282 / 15,408 ( 2 % )                        ;
-;     Total combinational functions  ; 234 / 15,408 ( 2 % )                        ;
-;     Dedicated logic registers      ; 169 / 15,408 ( 1 % )                        ;
-; Total registers                    ; 169                                         ;
-; Total pins                         ; 12 / 347 ( 3 % )                            ;
+; Total logic elements               ; 358 / 15,408 ( 2 % )                        ;
+;     Total combinational functions  ; 316 / 15,408 ( 2 % )                        ;
+;     Dedicated logic registers      ; 186 / 15,408 ( 1 % )                        ;
+; Total registers                    ; 186                                         ;
+; Total pins                         ; 25 / 347 ( 7 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0 / 516,096 ( 0 % )                         ;
+; Total memory bits                  ; 1,024 / 516,096 ( < 1 % )                   ;
 ; Embedded Multiplier 9-bit elements ; 0 / 112 ( 0 % )                             ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
@@ -64,29 +64,29 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/08/2018 11:30:24 ;
+; Start date & time ; 05/08/2018 15:43:29 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; 305Project          ;
 +-------------------+---------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                            ;
-+-------------------------------------+---------------------------------+---------------+--------------------+----------------+
-; Assignment Name                     ; Value                           ; Default Value ; Entity Name        ; Section Id     ;
-+-------------------------------------+---------------------------------+---------------+--------------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 109952947362228.152573582309488 ; --            ; --                 ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                            ; --            ; --                 ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)          ; <None>        ; --                 ; --             ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                              ; --            ; --                 ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                               ; --            ; --                 ; --             ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                            ; --            ; --                 ; --             ;
-; PARTITION_COLOR                     ; 16764057                        ; --            ; Mouse_ball_diagram ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING           ; --            ; Mouse_ball_diagram ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; Mouse_ball_diagram ; Top            ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                    ; --            ; --                 ; --             ;
-; TOP_LEVEL_ENTITY                    ; Mouse_ball_diagram              ; 305Project    ; --                 ; --             ;
-+-------------------------------------+---------------------------------+---------------+--------------------+----------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                     ;
++-------------------------------------+---------------------------------+---------------+-------------+----------------+
+; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id     ;
++-------------------------------------+---------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 109952947362662.152575100909992 ; --            ; --          ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                            ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)          ; <None>        ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                              ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                               ; --            ; --          ; --             ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                            ; --            ; --          ; --             ;
+; PARTITION_COLOR                     ; 16764057                        ; --            ; Diagram     ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING           ; --            ; Diagram     ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; Diagram     ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                    ; --            ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; Diagram                         ; 305Project    ; --          ; --             ;
++-------------------------------------+---------------------------------+---------------+-------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -94,12 +94,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 571 MB              ; 00:00:02                           ;
-; Fitter                    ; 00:00:08     ; 1.0                     ; 1297 MB             ; 00:00:10                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 480 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 561 MB              ; 00:00:02                           ;
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 601 MB              ; 00:00:03                           ;
+; Fitter                    ; 00:00:08     ; 1.4                     ; 1333 MB             ; 00:00:10                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 484 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 567 MB              ; 00:00:03                           ;
 ; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 453 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:16     ; --                      ; --                  ; 00:00:16                           ;
+; Total                     ; 00:00:17     ; --                      ; --                  ; 00:00:18                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -108,11 +108,11 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; EN-337517        ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; EN-337517        ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; EN-337517        ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; EN-337517        ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; EN-337517        ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; EN-352803        ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; EN-352803        ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; EN-352803        ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; EN-352803        ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; EN-352803        ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

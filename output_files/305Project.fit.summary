@@ -1,16 +1,16 @@
-Fitter Status : Successful - Tue May 08 11:30:35 2018
+Fitter Status : Successful - Tue May 08 15:43:41 2018
 Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Full Version
 Revision Name : 305Project
-Top-level Entity Name : Mouse_ball_diagram
+Top-level Entity Name : Diagram
 Family : Cyclone III
 Device : EP3C16F484C6
 Timing Models : Final
-Total logic elements : 282 / 15,408 ( 2 % )
-    Total combinational functions : 234 / 15,408 ( 2 % )
-    Dedicated logic registers : 169 / 15,408 ( 1 % )
-Total registers : 169
-Total pins : 12 / 347 ( 3 % )
+Total logic elements : 358 / 15,408 ( 2 % )
+    Total combinational functions : 316 / 15,408 ( 2 % )
+    Dedicated logic registers : 186 / 15,408 ( 1 % )
+Total registers : 186
+Total pins : 25 / 347 ( 7 % )
 Total virtual pins : 0
-Total memory bits : 0 / 516,096 ( 0 % )
+Total memory bits : 1,024 / 516,096 ( < 1 % )
 Embedded Multiplier 9-bit elements : 0 / 112 ( 0 % )
 Total PLLs : 0 / 4 ( 0 % )
