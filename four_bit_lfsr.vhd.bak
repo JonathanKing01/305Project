@@ -1,9 +1,7 @@
 LIBRARY ieee; 
 USE ieee.std_logic_1164.all;
 
--- To change this we can either look up a specific combination which
--- will lead to whatever we need to just change the XOR and reset
--- value randomly to make what we want.
+
 ENTITY four_bit_lfsr IS 
 	PORT (
 		clk : in std_logic;

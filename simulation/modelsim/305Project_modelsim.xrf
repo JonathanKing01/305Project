@@ -1,4 +1,5 @@
 vendor_name = ModelSim
+source_file = 1, D:/bcri429/305Project/four_bit_lfsr.vhd
 source_file = 1, D:/bcri429/305Project/vga_sync.vhd
 source_file = 1, D:/bcri429/305Project/mouse.VHD
 source_file = 1, D:/bcri429/305Project/char_rom.vhd

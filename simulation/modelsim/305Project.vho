@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.0.0 Build 156 04/24/2013 SJ Full Version"
 
--- DATE "05/08/2018 15:43:49"
+-- DATE "05/18/2018 10:33:20"
 
 -- 
 -- Device: Altera EP3C16F484C6 Package FBGA484
@@ -603,28 +603,28 @@ SIGNAL \inst|LessThan1~17_cout\ : std_logic;
 SIGNAL \inst|LessThan1~18_combout\ : std_logic;
 SIGNAL \inst2|red_out~2_combout\ : std_logic;
 SIGNAL \inst2|red_out~q\ : std_logic;
-SIGNAL \inst4|SHIFTIN\ : std_logic_vector(8 DOWNTO 0);
-SIGNAL \inst4|PACKET_COUNT\ : std_logic_vector(1 DOWNTO 0);
-SIGNAL \inst4|PACKET_CHAR3\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \inst4|PACKET_CHAR2\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \inst4|OUTCNT\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \inst4|INCNT\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \inst3|altsyncram_component|auto_generated|q_a\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \inst|Ball_Y_pos\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \inst2|pixel_row\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \inst2|pixel_column\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \inst4|new_cursor_row\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \inst|Ball_X_pos\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \inst|Ball_Y_motion\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \inst4|cursor_row\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \inst2|h_count\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \inst4|new_cursor_column\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \inst4|filter\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \inst|Ball_X_motion\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \inst4|inhibit_wait_count\ : std_logic_vector(10 DOWNTO 0);
-SIGNAL \inst4|new_cursor_column\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \inst4|cursor_column\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \inst4|new_cursor_row\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \inst4|PACKET_COUNT\ : std_logic_vector(1 DOWNTO 0);
+SIGNAL \inst2|pixel_row\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \inst4|SHIFTIN\ : std_logic_vector(8 DOWNTO 0);
 SIGNAL \inst2|v_count\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \inst2|h_count\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \inst|Ball_X_pos\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \inst4|SHIFTOUT\ : std_logic_vector(10 DOWNTO 0);
+SIGNAL \inst4|cursor_column\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \inst|Ball_Y_motion\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \inst4|PACKET_CHAR3\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \inst2|pixel_column\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \inst4|inhibit_wait_count\ : std_logic_vector(10 DOWNTO 0);
+SIGNAL \inst4|PACKET_CHAR2\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \inst4|ALT_INV_MOUSE_CLK_FILTER~clkctrl_outclk\ : std_logic;
 SIGNAL \inst4|ALT_INV_send_data~q\ : std_logic;
 SIGNAL \inst4|ALT_INV_mouse_state.INHIBIT_TRANS~q\ : std_logic;

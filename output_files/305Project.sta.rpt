@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for 305Project
-Tue May 08 15:43:47 2018
+Fri May 18 10:33:18 2018
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
 
 
@@ -4291,7 +4291,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
-    Info: Processing started: Tue May 08 15:43:44 2018
+    Info: Processing started: Fri May 18 10:33:15 2018
 Info: Command: quartus_sta 305Project -c 305Project
 Info: qsta_default_script.tcl version: #1
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -4411,9 +4411,9 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 567 megabytes
-    Info: Processing ended: Tue May 08 15:43:47 2018
+    Info: Peak virtual memory: 563 megabytes
+    Info: Processing ended: Fri May 18 10:33:18 2018
     Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 
