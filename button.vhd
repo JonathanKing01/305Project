@@ -1,0 +1,64 @@
+			-- Bouncing Ball Video 
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.all;
+USE IEEE.STD_LOGIC_ARITH.all;
+USE IEEE.STD_LOGIC_SIGNED.all;
+
+ENTITY button2 IS
+Generic(ADDR_WIDTH: integer := 12; DATA_WIDTH: integer := 1);
+
+   PORT(SIGNAL PB1, PB2, Clock 			: IN std_logic;
+		  SIGNAL Switch_one					: IN std_logic;
+		  SIGNAL vert_sync_int				: IN std_logic;
+        SIGNAL button_input: IN std_logic;
+		  SIGNAL pixel_row, pixel_column	: IN std_logic_vector(9 DOWNTO 0);
+		  SIGNAL Cursor_Y_pos, Cursor_X_pos		: std_logic_vector(9 DOWNTO 0);
+        SIGNAL Red,Green,Blue 			: OUT std_logic;
+        SIGNAL button_down: OUT std_logic
+	);
+END button2;
+
+architecture behavior of button2 is
+
+			-- Video Display Signals   
+SIGNAL Red_Data, Green_Data, Blue_Data,
+		reset, Ball_on, Direction					: std_logic;
+SIGNAL Size 											: std_logic_vector(9 DOWNTO 0);  
+SIGNAL Ball_Y_pos, Ball_X_pos						: std_logic_vector(9 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(240,10);
+
+BEGIN           
+Size <= CONV_STD_LOGIC_VECTOR(15,10);
+
+		-- Colors for pixel data on video signal
+Red <=  Ball_on;
+		-- Turn off Green and Blue when displaying ball
+Green <= '0';
+Blue <=  '0';
+
+RGB_Display: Process (Ball_X_pos, Ball_Y_pos, pixel_column, pixel_row, Size)
+BEGIN
+			-- Set Ball_on ='1' to display ball
+ IF (Ball_X_pos <= pixel_column) AND
+ 			-- compare positive numbers only
+ 	(Ball_X_pos + Size >= pixel_column) AND
+ 	(Ball_Y_pos <= pixel_row) AND
+ 	(Ball_Y_pos + Size >=  pixel_row ) THEN
+ 		Ball_on <= '1';
+ 	ELSE
+ 		Ball_on <= '0';
+	END IF;
+END process RGB_Display;
+
+Detect_Click: Process (button_input)
+BEGIN
+	if(button_input = '0' AND 
+	
+	(Cursor_X_pos >= ball_X_pos) AND (Cursor_Y_pos >= ball_Y_pos) ) THEN
+		button_down <= '1';
+	ELSE
+		button_down <= '0';
+	end if;
+END process Detect_Click;
+
+END behavior;
+
