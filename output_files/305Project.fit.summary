@@ -1,14 +1,14 @@
-Fitter Status : Successful - Fri May 18 10:33:12 2018
+Fitter Status : Successful - Fri May 18 11:39:10 2018
 Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Full Version
 Revision Name : 305Project
 Top-level Entity Name : Diagram
 Family : Cyclone III
 Device : EP3C16F484C6
 Timing Models : Final
-Total logic elements : 358 / 15,408 ( 2 % )
-    Total combinational functions : 316 / 15,408 ( 2 % )
-    Dedicated logic registers : 186 / 15,408 ( 1 % )
-Total registers : 186
+Total logic elements : 364 / 15,408 ( 2 % )
+    Total combinational functions : 322 / 15,408 ( 2 % )
+    Dedicated logic registers : 187 / 15,408 ( 1 % )
+Total registers : 187
 Total pins : 25 / 347 ( 7 % )
 Total virtual pins : 0
 Total memory bits : 1,024 / 516,096 ( < 1 % )

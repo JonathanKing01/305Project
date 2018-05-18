@@ -71,18 +71,20 @@ BEGIN
 			Ball_Y_pos <= Ball_Y_pos + Ball_Y_motion;
 			
 			-- If PB1 or 2 is pushed, set movement vector, otherwise set to 0
-			IF (PB1 = '0' OR PB2 = '0') THEN
+			IF (PB1 = '0') THEN
 				Ball_X_motion <= - CONV_STD_LOGIC_VECTOR(Speed,10);
-			ELSE
-				Ball_X_motion <= CONV_STD_LOGIC_VECTOR(0,10);
+			ELSIF (PB2 = '0') THEN
+				Ball_X_motion <= CONV_STD_LOGIC_VECTOR(Speed,10);
+			
+			-- Logic for hitting a wall
+			ELSIF (Ball_X_pos = 0) THEN
+				Ball_X_motion <= CONV_STD_LOGIC_VECTOR(Speed,10);
+			ELSIF (Ball_X_pos + size = 640) THEN
+				Ball_X_motion <= - CONV_STD_LOGIC_VECTOR(Speed,10);
 			END IF;
 			
 			-- Compute next ball X position depending on movement
-			IF (PB1 = '0') THEN
-				Ball_X_pos <= Ball_X_pos + Ball_X_motion;
-			ELSIF (PB2 = '0') THEN
-				Ball_X_pos <= Ball_X_pos - Ball_X_motion;
-			END IF;
+			Ball_X_pos <= Ball_X_pos + Ball_X_motion;
 END process Move_Ball;
 
 -- Display's which button is pressed on the seven_seg

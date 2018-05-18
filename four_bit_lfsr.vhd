@@ -23,12 +23,12 @@ BEGIN
 	
 		IF (clk'event AND clk = '1') THEN
 			IF (reset = '1') THEN
-				v_random_number <= "0100";
+				v_random_number <= "0001";
 			ELSE
 				v_random_number(3) <= v_random_number(0);
-				v_random_number(2) <= v_random_number(3) XOR v_random_number(0);
-				v_random_number(1) <= v_random_number(2) XOR v_random_number(1);
-				v_random_number(0) <= v_random_number(1);
+				v_random_number(2) <= v_random_number(3);
+				v_random_number(1) <= v_random_number(2);
+				v_random_number(0) <= v_random_number(1) XOR v_random_number(2);
 			END IF;
 		END IF;
 
