@@ -1,5 +1,6 @@
 LIBRARY ieee; 
 USE ieee.std_logic_1164.all;
+USE IEEE.numeric_std.all;
 
 -- To change this we can either look up a specific combination which
 -- will lead to whatever we need to just change the XOR and reset
@@ -11,7 +12,7 @@ ENTITY four_bit_lfsr IS
 		clk : in std_logic;
 		reset : in std_logic;
 		enable : in std_logic;
-		random_number : out std_logic_vector(4 downto 0)
+		random_number : out integer
 	);
 END ENTITY;
 
@@ -35,7 +36,7 @@ BEGIN
 			END IF;
 		END IF;
 
-		random_number <= v_random_number;
+		random_number <= to_integer(unsigned(v_random_number));
 		
 	END process;
 END ARCHITECTURE;
